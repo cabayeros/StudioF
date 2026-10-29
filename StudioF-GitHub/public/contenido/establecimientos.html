@@ -1,0 +1,260 @@
+
+ 
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { max-width: 100%; overflow-x: hidden; margin:0; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+    /* Panel */
+    .panel-organica { background-color: rgb(255, 240, 218); border: 0; box-shadow:none; }
+    .panel-heading-lcm {
+      background-color: rgb(255, 248, 238);
+      color: rgb(33, 19, 15);
+      padding: 18px 12px;
+      text-align: center;
+      border: 0;
+    }
+    .panel-body-clean {
+      background-color: rgb(255, 248, 238);
+      padding: 18px;
+      border: 0;
+      overflow: hidden;
+    }
+
+    .estab-grid{
+      display: grid;
+      grid-template-columns: 1fr;     /* móvil */
+      gap: 24px;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    @media (min-width: 768px){
+      .estab-grid{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 992px){
+      .estab-grid{ grid-template-columns: repeat(3, 1fr); } /* como tu screenshot */
+    }
+
+    /* Card */
+    .estab-card{
+      background: rgb(76, 14, 29);
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      height:100%;                 /* todas estiran parejo en el grid */
+      overflow:hidden;
+      border-radius: 2px;
+    }
+
+    /* Normaliza márgenes de bootstrap */
+    .estab-card h3,
+    .estab-card p { margin: 0; }
+
+    /* Imagen misma altura SIEMPRE */
+    .estab-imgwrap{
+      height: 490px;
+      width:100%;
+      overflow:hidden;
+      background:#000;
+      flex: 0 0 auto;
+    }
+    .estab-img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position: top center;
+      display:block;
+    }
+
+    /* Body con alto consistente */
+    .estab-body{
+      padding: 16px;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      gap: 6px;
+      flex: 1;                 /* llena el espacio */
+      min-height: 170px;       /* CLAVE: mismo alto para la parte vino */
+    }
+
+    .estab-title{
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 700;
+
+      /* CLAVE: título máximo 2 líneas */
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .estab-text{
+      font-size: 14px;
+      line-height: 1.25;
+      opacity: .95;
+
+      /* CLAVE: texto máximo 2 líneas por bloque */
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      word-break: break-word;
+    }
+
+    .estab-time{
+      margin-top:auto;         /* siempre pegado abajo */
+      padding-top: 10px;
+      font-size: 14px;
+      opacity: 1;
+
+      /* opcional: 2 líneas máximo */
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="panel panel-organica">
+    <div class="panel-heading-lcm">
+      <h2 style="margin:0;">ESTABLECIMIENTOS</h2>
+    </div>
+
+    <div class="panel-body panel-body-clean">
+
+      <div class="estab-grid">
+                  
+          <div class="estab-card">
+            <div class="estab-imgwrap">
+              <img class="estab-img"
+                   src="img/sucursales/Oakland.jpeg"
+                   alt="Establecimiento">
+            </div>
+
+            <div class="estab-body">
+              <h3 class="estab-title">Oakland Place</h3>
+
+                              <p class="estab-text">Planta baja Oakland Place local 114</p>
+              
+                              <p class="estab-text">Ciudad Guatemala, Guatemala</p>
+              
+                              <p class="estab-time">Lunes a Domingo, 10:00 a.m. a 8:00 p.m.</p>
+                          </div>
+          </div>
+
+                  
+          <div class="estab-card">
+            <div class="estab-imgwrap">
+              <img class="estab-img"
+                   src="img/sucursales/Pradera.jpeg"
+                   alt="Establecimiento">
+            </div>
+
+            <div class="estab-body">
+              <h3 class="estab-title">Pradera Concepcion</h3>
+
+                              <p class="estab-text">Pradera Concepción L 247 Nivel 2</p>
+              
+                              <p class="estab-text">Guatemala</p>
+              
+                              <p class="estab-time">Lunes a Domingo, 10:00 a.m. a 8:00 p.m.</p>
+                          </div>
+          </div>
+
+                  
+          <div class="estab-card">
+            <div class="estab-imgwrap">
+              <img class="estab-img"
+                   src="img/sucursales/Chiquimula.jpg"
+                   alt="Establecimiento">
+            </div>
+
+            <div class="estab-body">
+              <h3 class="estab-title">Pradera Chiquimula</h3>
+
+                              <p class="estab-text">Pradera Chiquimula L 139</p>
+              
+                              <p class="estab-text">Guatemala</p>
+              
+                              <p class="estab-time">Lunes a Domingo, 10:00 a.m. a 8:00 p.m.</p>
+                          </div>
+          </div>
+
+                  
+          <div class="estab-card">
+            <div class="estab-imgwrap">
+              <img class="estab-img"
+                   src="img/sucursales/Majadas.jpeg"
+                   alt="Establecimiento">
+            </div>
+
+            <div class="estab-body">
+              <h3 class="estab-title">Majadas</h3>
+
+                              <p class="estab-text">local 25A</p>
+              
+                              <p class="estab-text">Guatemala</p>
+              
+                              <p class="estab-time">Lunes a Domingo, 10:00 a.m. a 8:00 p.m.</p>
+                          </div>
+          </div>
+
+                  
+          <div class="estab-card">
+            <div class="estab-imgwrap">
+              <img class="estab-img"
+                   src="img/sucursales/Naranjo.jpeg"
+                   alt="Establecimiento">
+            </div>
+
+            <div class="estab-body">
+              <h3 class="estab-title">Naranjo</h3>
+
+                              <p class="estab-text">local 107–108, nivel 1</p>
+              
+                              <p class="estab-text">Guatemala</p>
+              
+                              <p class="estab-time">Lunes a Domingo, 10:00 a.m. a 8:00 p.m.</p>
+                          </div>
+          </div>
+
+                  
+          <div class="estab-card">
+            <div class="estab-imgwrap">
+              <img class="estab-img"
+                   src="img/sucursales/Escuintla.jpg"
+                   alt="Establecimiento">
+            </div>
+
+            <div class="estab-body">
+              <h3 class="estab-title">Interplaza Escuintla</h3>
+
+                              <p class="estab-text">Interplaza en Escuintla L 275</p>
+              
+                              <p class="estab-text">Guatemala</p>
+              
+                              <p class="estab-time">Lunes a Domingo, 10:00 a.m. a 8:00 p.m.</p>
+                          </div>
+          </div>
+
+              </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
